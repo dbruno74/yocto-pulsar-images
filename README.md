@@ -19,7 +19,15 @@ Install [Virtual Box](https://www.virtualbox.org/wiki/Downloads) to run the Virt
 mkdir -p yocto-qemu 
 cd yocto-qemu
 tar xzf yocto-qemu-share.tar.gz
-qemu-system-x86_64 -m 2048 -kernel bzImage-qemux86-64.bin -drive file=yocto-qemux86-64.ext4,format=raw -append "root=/dev/sda console=ttyS0" -net nic -net user -cpu IvyBridge -nographic
+qemu-system-x86_64 \
+-m 2048 \
+-kernel bzImage-qemux86-64.bin \
+-drive file=yocto-qemux86-64.ext4,format=raw \
+-append "root=/dev/sda console=ttyS0" \
+-net nic \
+-net user \
+-cpu IvyBridge \
+-nographic
 ```
 
 ## Boot the Virtual Box image
