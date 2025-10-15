@@ -18,8 +18,10 @@ Install [Virtual Box](https://www.virtualbox.org/wiki/Downloads) to run the Virt
 ```
 mkdir -p yocto-qemu 
 cd yocto-qemu
-tar xzf yocto-qemu-share.tar.gz
+tar xzf ../yocto-qemu-share.tar.gz
 qemu-system-x86_64 \
+-device virtio-net-pci,netdev=net0,mac=52:54:00:12:35:02 \
+-netdev user,id=net0,hostfwd=tcp:127.0.0.1:2222-:22,hostfwd=tcp:127.0.0.1:2323-:23 \
 -m 2048 \
 -kernel bzImage-qemux86-64.bin \
 -drive file=yocto-qemux86-64.ext4,format=raw \
@@ -29,6 +31,11 @@ qemu-system-x86_64 \
 -cpu IvyBridge \
 -nographic
 ```
+Login with root (no password), or ssh to the running qemu image from your host with this command:
+```
+ssh -o StrictHostKeyChecking=no root@127.0.0.1 -p 2222
+```
+To exit the qemu session, type `Ctrl+A, X`
 
 ## Boot the Virtual Box image
 ```
