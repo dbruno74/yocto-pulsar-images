@@ -1,5 +1,5 @@
 # yocto-pulsar-images
-Yocto core-minimal prebuilt images for qemu and Virtual Box which supports Exein Pulsar and Pulsar Enterprise. The images include the [meta-exein layer](https://github.com/exein-io/meta-exein).
+Yocto core-minimal x86_64 prebuilt images for qemu and Virtual Box which supports Exein Pulsar and Pulsar Enterprise. The images include the [meta-exein layer](https://github.com/exein-io/meta-exein).
 
 ## Prerequisites
 Install qemu to run the qemu image
