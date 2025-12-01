@@ -60,6 +60,16 @@ Login with root (no password), or ssh to the running image from your host with t
 ssh -o StrictHostKeyChecking=no root@yocto-vb.local
 ```
 
+## Provision the Virtual Box image with Vagrant
+```
+mkdir -p yocto-vagrant
+cd yocto-vagrant
+tar xzf ../yocto-vagrant-share.tar.gz
+vagrant box add yocto-vbx86-64 yocto-vbx86-64.box
+vagrant up
+vagrant ssh 
+```
+
 ## Run Pulsar
 Launch `pulsard`
 
