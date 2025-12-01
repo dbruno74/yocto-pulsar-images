@@ -41,7 +41,7 @@ To exit the qemu session, type `Ctrl+A, X`
 ```
 mkdir -p yocto-vb
 cd yocto-vb
-tar xzf yocto-vb-share.tar.gz
+tar xzf ../yocto-vb-share.tar.gz
 ```
 To boot your image with Virtual Box
 - Launch Virtual Box
