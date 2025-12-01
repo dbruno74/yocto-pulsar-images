@@ -1,0 +1,22 @@
+Vagrant.configure("2") do |config|
+  config.vm.guest = :linux
+  config.vm.box = "yocto-vbx86-64"
+  
+  config.ssh.username = "root"
+  config.ssh.shell = "/bin/sh"
+  config.ssh.password = ""
+  config.ssh.sudo_command = ""
+  config.ssh.private_key_path = nil
+  config.ssh.keys_only = false
+  config.ssh.insert_key = false
+
+  # Disable synced folders (Yocto lacks VBox Guest Additions)
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  # reduce Vagrant features that require guest OS
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    # Disable Guest Additions check
+    vb.check_guest_additions = false
+  end
+end
